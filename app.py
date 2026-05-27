@@ -2,7 +2,7 @@ import boto3
 
 s3 = boto3.client('s3', region_name='us-east-1')
 
-bucket_name = '123567777777'
+bucket_name = '12357777'
 
 response = s3.create_bucket(
     Bucket=bucket_name
