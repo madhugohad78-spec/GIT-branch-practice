@@ -1,12 +1,11 @@
 import boto3
 
-ec2 = boto3.client('ec2', region_name='us-east-1')
+s3 = boto3.client('s3', region_name='us-east-1')
 
-response = ec2.create_image(
-    InstanceId='i-0123456789abcdef0',
-    Name='MyApp-AMI',
-    Description='AMI created from EC2 instance',
-    NoReboot=True
+bucket_name = 'my-demo-bucket-12345'
+
+response = s3.create_bucket(
+    Bucket=bucket_name
 )
 
-print("AMI ID:", response['ImageId'])
+print(f"Bucket created: {bucket_name}")
